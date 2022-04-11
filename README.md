@@ -27,7 +27,7 @@ We include the following properties of different defenses in this leaderboard.
 4. **Vanilla clean accuracy:** clean accuracy of vanilla undefended models (if the defense is built upon off-the-shelf models)
 5. **Backbone:** the backbone used for each defense
 6. **Comment:** additional comments for each defense, including SOTA results, defense parameters, special training recipes.
-7. **Code:** most defenses have open-sourced implementations by the authors or others
+7. **Code:** most defenses have source code implemented by the authors or others
 
 **Note:** We discuss more properties of different defenses in [another copy of leaderboards](https://docs.google.com/spreadsheets/d/1zDBg5AmpWq92c_MaSx6vq4FsOUnzu57i8aUuex2NT7Y/edit?usp=sharing) hosted on Google Sheet.
 
@@ -48,7 +48,7 @@ The robust prediction defense requires the defense model to always predict a rob
 
 |                                                              | certified robust accuracy | clean accuracy | vanilla clean accuracy | backbone                           | comment                                                      | code                                                    |
 | ------------------------------------------------------------ | ------------------------- | -------------- | ---------------------- | ---------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------- |
-| [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 62.1                      | 83.9           | 84.8                   | ViT-B                              | SOTA with known patch size; k=6; trained with cutout         | [code](https://github.com/inspire-group/PatchCleanser)  |
+| [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 62.1                      | 83.9           | 84.8                   | ViT-B                              | **SOTA with known patch size**; k=6; trained with cutout     | [code](https://github.com/inspire-group/PatchCleanser)  |
 | [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 61.6                      | 83.8           | 84.8                   | ViT-B                              | k=6                                                          | [code](https://github.com/inspire-group/PatchCleanser)  |
 | [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 59.8                      | 83.7           | 84.8                   | ViT-B                              | k=5; trained with masked images                              | [code](https://github.com/inspire-group/PatchCleanser)  |
 | [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 59.4                      | 83.6           | 83.7                   | ViT-B                              | k=4; trained with masked images                              | [code](https://github.com/inspire-group/PatchCleanser)  |
@@ -56,11 +56,11 @@ The robust prediction defense requires the defense model to always predict a rob
 | [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 53.8                      | 79.4           | 80.2                   | ResMLP-S                           | k=6; trained with masked images                              | [code](https://github.com/inspire-group/PatchCleanser)  |
 | [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 53.1                      | 79.6           | 80.8                   | ResMLP-S                           | k=6                                                          | [code](https://github.com/inspire-group/PatchCleanser)  |
 | [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 53                        | 81.6           | 82.3                   | ResNet-50                          | k=6; trained with masked images                              | [code](https://github.com/inspire-group/PatchCleanser)  |
-| [ECViT](https://arxiv.org/abs/2203.08519)  (CVPR 2022)       | 41.7                      | 75.58          | NA                     | ViT-B                              | SOTA with unknown patch size; b=37; progressively trained with pixel bands | NA                                                      |
+| [ECViT](https://arxiv.org/abs/2203.08519)  (CVPR 2022)       | 41.7                      | 75.58          | NA                     | ViT-B                              | **SOTA with unknown patch size**; b=37; progressively trained with pixel bands | NA                                                      |
 | [PatchCleanser](https://arxiv.org/abs/2108.09135)  (USENIX Security 2022) | 41.6                      | 81.1           | 82.8                   | ResNet-50                          | k=6                                                          | [code](https://github.com/inspire-group/PatchCleanser)  |
 | [ECViT](https://arxiv.org/abs/2203.08519)  (CVPR 2022)       | 40.79                     | 75.3           | NA                     | ViT-B                              | b=25; progressively trained with pixel bands                 | NA                                                      |
 | [ECViT](https://arxiv.org/abs/2203.08519)  (CVPR 2022)       | 40.72                     | 73.49          | NA                     | ViT-B                              | b=19; progressively trained with pixel bands                 | NA                                                      |
-| [Smoothed  ViT](https://arxiv.org/abs/2110.07719) (CVPR 2022) | 38.3                      | 69.3           | NA                     | ViT-B                              | SOTA with unknown patch size (with code); b=19               | [code](https://github.com/MadryLab/smoothed-vit)        |
+| [Smoothed  ViT](https://arxiv.org/abs/2110.07719) (CVPR 2022) | 38.3                      | 69.3           | NA                     | ViT-B                              | **SOTA with unknown patch size (with code)**; b=19           | [code](https://github.com/MadryLab/smoothed-vit)        |
 | [Smoothed  ViT](https://arxiv.org/abs/2110.07719) (CVPR 2022) | 38.2                      | 73.2           | NA                     | ViT-B                              | b=37; trained with pixel bands                               | [code](https://github.com/MadryLab/smoothed-vit)        |
 | [Smoothed  ViT](https://arxiv.org/abs/2110.07719) (CVPR 2022) | 36.9                      | 68.3           | NA                     | ViT-B                              | b=19; s=10; trained with pixel bands                         | [code](https://github.com/MadryLab/smoothed-vit)        |
 | [Smoothed  ViT](https://arxiv.org/abs/2110.07719) (CVPR 2022) | 31.6                      | 63.5           | NA                     | ViT-S                              | b=19; trained with pixel bands                               | [code](https://github.com/MadryLab/smoothed-vit)        |
@@ -95,15 +95,15 @@ The attack detection defense allows the defense to alert and abstain from making
 #### Note 1:
 
 1. Attack detection defenses usually can tune the defense parameters to balance the trade-off between clean accuracy and robust accuracy. 
-2. Here, I only report three representative points for each defense setup
-   - low-tau: high robust accuracy and low clean accuracy: clean accuracy and robust accuracy are the same
-   - high-tau: low robust accuracy and high clean accuracy: clean accuracy is close to vanilla undefended clean accuracy
-   - mid-tau: in between
+2. Here, I only report three representative points for each defense setup (different confidence threshold tau)
+   - *low-tau*: high robust accuracy and low clean accuracy; clean accuracy and robust accuracy are the same
+   - high-tau: low robust accuracy and high clean accuracy; clean accuracy is close to vanilla undefended clean accuracy
+   - *mid-tau*: in between
 3. You are encouraged to play with the code yourself :)
 
 #### Note 2:
 
-1. The original Minority Reports paper does not discuss ImageNet.
+1. The original [Minority Reports](https://arxiv.org/abs/2004.13799) paper does not discuss high-resolution images like ImageNet.
 2. The results here (Minority Reports + PatchCleanser) are from the discussion section of the PatchCleanser paper.
 3. the idea is to plug PatchCleanser's mask generation approach into the MR defense design
    https://github.com/inspire-group/PatchCleanser/blob/main/misc/pc_mr.py
@@ -112,7 +112,7 @@ The attack detection defense allows the defense to alert and abstain from making
 
 |                                                              | certified robust accuracy | clean accuracy | vanilla clean accuracy (if  applicable) | backbone  | comment                                                      | code                                                   |
 | ------------------------------------------------------------ | ------------------------- | -------------- | --------------------------------------- | --------- | ------------------------------------------------------------ | ------------------------------------------------------ |
-| [Minority Reports](https://arxiv.org/abs/2004.13799) (ACNS Workshop 2020) +  [PatchCleanser](https://arxiv.org/abs/2108.09135) (USENIX Security 20222) | 74.3                      | 74.3           | 84.8                                    | ViT-B     | Highest certified robust accuracy; k=6; low-tau; trained with  masked images | [code](https://github.com/inspire-group/PatchCleanser) |
+| [Minority Reports](https://arxiv.org/abs/2004.13799) (ACNS Workshop 2020) +  [PatchCleanser](https://arxiv.org/abs/2108.09135) (USENIX Security 20222) | 74.3                      | 74.3           | 84.8                                    | ViT-B     | **Highest certified robust accuracy**; k=6; low-tau; trained with  masked images | [code](https://github.com/inspire-group/PatchCleanser) |
 | [Minority Reports](https://arxiv.org/abs/2004.13799) (ACNS Workshop 2020) +  [PatchCleanser](https://arxiv.org/abs/2108.09135) (USENIX Security 20222) | 73.7                      | 73.7           | 84.8                                    | ViT-B     | k=5; low-tau; trained with masked images                     | [code](https://github.com/inspire-group/PatchCleanser) |
 | [Minority Reports](https://arxiv.org/abs/2004.13799) (ACNS Workshop 2020) +  [PatchCleanser](https://arxiv.org/abs/2108.09135) (USENIX Security 20222) | 73.2                      | 73.2           | 84.8                                    | ViT-B     | k=4; low-tau; trained with masked images                     | [code](https://github.com/inspire-group/PatchCleanser) |
 | [Minority Reports](https://arxiv.org/abs/2004.13799) (ACNS Workshop 2020) +  [PatchCleanser](https://arxiv.org/abs/2108.09135) (USENIX Security 20222) | 72.8                      | 72.8           | 84.5                                    | ViT-B     | k=6; low-tau                                                 | [code](https://github.com/inspire-group/PatchCleanser) |
